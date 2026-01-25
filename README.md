@@ -27,17 +27,18 @@ The project is designed for non-technical stakeholders and emphasizes clarity, i
 ## 📁 Repository Structure
 
 visuals/ → Final charts used in the report
-report.html → HTML storytelling report
-notebooks/ → Analysis notebook
+notebooks/ → Analysis notebooks
 data/ → Dataset (not uploaded due to size; see data source below)
+index.html → Main storytelling report (deployed)
+style.css → Styling for the report
 
 
 ---
 
-## 📖 Report
-The full visual storytelling report is available here:  
-➡️ `report.html`  
-Or live via GitHub Pages.
+## 🌐 Live Project
+
+You can view the full interactive report here:  
+➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/
 
 ---
 
@@ -45,7 +46,7 @@ Or live via GitHub Pages.
 - Python (Pandas, Matplotlib, Seaborn)
 - Jupyter Notebook
 - HTML & CSS
-- GitHub
+- GitHub & GitHub Pages
 
 ---
 
