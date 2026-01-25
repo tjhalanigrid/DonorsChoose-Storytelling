@@ -35,7 +35,7 @@ style.css → Styling for the report
 
 ---
 
-## 🌐 Live Project
+## 🌐 Final Report
 
 You can view the full interactive report here:  
 ➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/
