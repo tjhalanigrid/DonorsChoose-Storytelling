@@ -26,11 +26,11 @@ The project is designed for non-technical stakeholders and emphasizes clarity, i
 
 ## 📁 Repository Structure
 
-visuals/ → Final charts used in the report
-notebooks/ → Analysis notebooks
-data/ → Dataset (not uploaded due to size; see data source below)
-index.html → Main storytelling report (deployed)
-style.css → Styling for the report
+- visuals/ → Final charts used in the report
+- notebooks/ → Analysis notebooks
+- data/ → Dataset (not uploaded due to size; see data source below)
+- index.html → Main storytelling report (deployed)
+- style.css → Styling for the report
 
 
 ---
