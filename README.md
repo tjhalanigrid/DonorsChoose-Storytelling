@@ -49,7 +49,7 @@ Project Structure
 ## 🌐 Final Report
 
 You can view the full interactive report here:  
-➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/
+➡️ [https://tjhalanigrid.github.io/DonorsChoose-Storytelling/main.html]
 
 ---
 
