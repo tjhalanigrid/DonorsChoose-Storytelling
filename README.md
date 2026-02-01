@@ -26,12 +26,23 @@ The project is designed for non-technical stakeholders and emphasizes clarity, i
 
 ## 📁 Repository Structure
 
-- visuals/ → Final charts used in the report
-- notebooks/ → Analysis notebooks
-- data/ → Dataset (not uploaded due to size; see data source below)
-- index.html → Main storytelling report (deployed)
-- style.css → Styling for the report
+Project Structure
 
+- visuals/  
+  → Final interactive charts (Plotly HTML files) used in the report.
+
+- notebooks/  
+  → Analysis notebook: contains all exploratory analysis, experiments, and intermediate plots.  
+  → Main notebook: contains only the final and important code used to generate conclusions and report visuals.
+
+- data/  
+  → Dataset files (not included in the repository due to large size; see the data source link below).
+
+- main.html  
+  → Main storytelling report (deployed version).
+
+- style.css  
+  → Custom styling for the storytelling report.
 
 ---
 
