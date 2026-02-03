@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funding the Gap - DonorsChoose Story</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+
+<h1>Funding the Gap: What Drives Project Approval on DonorsChoose?</h1>
+<!-- <div class="section">
+<h2>Introduction</h2>
+
+<p>
+DonorsChoose enables teachers across the United States to request funding for classroom projects,
+ranging from basic supplies to specialized equipment. Although most projects are eventually approved,
+this high overall approval rate can mask important disparities in which types of projects succeed.
+</p>
+
+<p>
+This project, titled <b>“Funding the Gap”</b>, investigates a decision-oriented question:
+<b>which project characteristics are systematically associated with approval, and which types of
+projects face a higher risk of rejection?</b>
+</p>
+
+<p>
+Using historical DonorsChoose data, the analysis begins with a correlation-based overview and then
+examines how approval outcomes vary with project cost, project scale, teacher experience, grade level,
+and subject category. These factors serve as observable signals of deeper constraints such as financial
+risk, proposal maturity, and donor preferences.
+</p>
+
+<p>
+The goal is not to assess individual teachers, but to uncover consistent structural patterns that
+can inform fairer platform design, stronger onboarding support, and targeted funding strategies for
+projects that are currently disadvantaged.
+</p>
+
+</div> -->
+
+<div class="section">
+<h2>Introduction</h2>
+
+<p>
+DonorsChoose enables teachers across the United States to request funding for classroom projects, ranging from basic supplies to specialized equipment. Although most projects are eventually approved, this high overall approval rate can mask important disparities in which types of projects succeed. This project, titled <b>“Funding the Gap”</b>, addresses a decision-oriented question: <b>which project characteristics are systematically associated with approval, and which types of projects face a higher risk of rejection?</b> Using historical DonorsChoose data, the analysis begins with a correlation-based overview and then examines how approval outcomes vary with project cost, project scale, teacher experience, grade level, and subject category. These factors act as observable signals of deeper constraints such as financial risk, proposal maturity, and donor preferences. The goal is not to evaluate individual teachers, but to identify consistent structural patterns that can inform fairer platform design, stronger onboarding support, and more targeted funding strategies for projects that are currently disadvantaged.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>Business Questions</h2>
+
+<p>
+Building on the correlation overview, this analysis addresses the following decision-focused questions:
+</p>
+
+<ul>
+    <li>
+        Which project characteristics show the strongest association with approval outcomes?
+    </li>
+    <li>
+        Does higher project cost and larger requested quantity jointly reduce the likelihood of approval?
+    </li>
+    <li>
+        To what extent does teacher experience improve approval outcomes, and under what conditions?
+    </li>
+    <li>
+        Are certain subject categories systematically advantaged or disadvantaged in the approval process?
+    </li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>Overall Approval Landscape</h2>
+
+<div class="side-by-side approval-row">
+
+    <!-- Plot -->
+    <div class="plot-col">
+        <img
+    src="../visuals/overall_approval_rate.png"
+    class="approval-plot"
+    alt="Overall approval rate"
+>
+    </div>
+
+    <!-- Text -->
+    <div class="text-col">
+
+        <p class="caption">
+        Approximately <b>85% of projects</b> on DonorsChoose are approved, indicating broad platform accessibility.
+        </p>
+
+        <div class="viz-explanation">
+        <ul>
+            <li>
+                Nearly <b>one in seven projects</b> still fails to receive funding.
+            </li>
+            <li>
+                A single average can hide systematic differences across project types.
+            </li>
+            <li>
+                Approval outcomes reflect multiple interacting project characteristics.
+            </li>
+        </ul>
+        </div>
+
+        <p class="caption">
+        This baseline motivates the following <b>correlation-based overview</b>.
+        </p>
+
+    </div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>What Drives Approval? A Correlation Overview</h2>
+
+<iframe
+    src="../visuals/correlation_heatmap.html?v=3"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe>
+
+<p class="caption">
+This heatmap provides a high-level overview of how key numeric project characteristics
+are linearly associated with project approval.
+It serves as a diagnostic starting point for the analysis rather than a final explanation.
+</p>
+
+<div class="viz-explanation">
+<!-- <b>How to read this heatmap:</b>
+<ul>
+    <li>
+        Each cell shows the correlation between a numeric project feature
+        (teacher experience, project price, requested quantity and digit count in the summary)
+        and the approval outcome.
+    </li>
+    <li>
+        Values close to <b>+1</b> indicate a positive association with approval,
+        values close to <b>−1</b> indicate a negative association,
+        and values close to <b>0</b> indicate little or no linear relationship.
+    </li>
+</ul> -->
+</div>
+
+<div class="viz-explanation">
+<b>Key signals from the correlation overview:</b>
+
+<ul>
+    <li>
+        Values close to <b>+1</b> indicate a positive association with approval,
+        values close to <b>−1</b> indicate a negative association,
+        and values close to <b>0</b> indicate little or no linear relationship.
+    </li>
+    <li>
+        <b>Teacher experience</b> exhibits the strongest positive association with approval,
+        indicating that projects submitted by more experienced teachers are slightly more likely
+        to be approved.
+    </li>
+    <li>
+        <b>Project price</b> shows the strongest negative association with approval,
+        suggesting that higher-cost projects face a greater risk of rejection.
+    </li>
+    <li>
+        <b>Requested quantity</b> also displays a weak negative relationship with approval,
+        implying that larger project scope may contribute to lower approval probabilities.
+    </li>
+    <li>
+        The digit count in the project summary shows a near-zero association,
+        indicating that simple textual length or numeric content alone does not meaningfully
+        influence approval outcomes.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+Importantly, all correlations are small in magnitude. This indicates that approval decisions
+are not driven by any single numeric factor. Instead, these results highlight where the most
+relevant signals lie and motivate a deeper examination of how cost, experience and project
+scale behave across different ranges and contexts.
+</p>
+
+<p class="caption">
+The following sections therefore build directly on this overview by first examining
+the strongest negative signal—project cost—and then investigating the strongest
+positive signal—teacher experience—before exploring how these factors interact.
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+<h2>From Correlation to Trend: Does Project Cost Influence Approval?</h2>
+
+<img
+    src="../visuals/price_and_project_approval_analysis.png"
+    width="100%"
+>
+
+<p class="caption">
+The correlation overview identified project price as the strongest negatively associated numeric feature.
+This plot examines how approval rates change across cost levels.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        The left panel shows the distribution of project costs for approved and rejected proposals.
+    </li>
+    <li>
+        The right panel shows approval rates across increasing price ranges.
+    </li>
+    <li>
+        Approval rates decrease steadily as project cost increases
+        (from above 90% in the lowest range to around 75–80% in the highest range).
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+Project cost therefore acts as a consistent constraint on approval, although it does not determine outcomes on its own.
+The next section examines whether teacher experience can mitigate this cost disadvantage.
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+<h2>From Correlation to Trend: The Role of Teacher Experience</h2>
+
+<iframe
+    src="../visuals/teacher_experience_grade_approval_analysis.html?v=1"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe>
+
+<p class="caption">
+The correlation overview showed teacher experience as the strongest positively associated numeric feature.
+This visualization examines how approval rates change across experience levels.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        The x-axis represents teacher experience, measured by the number of previously posted projects.
+    </li>
+    <li>
+        Approval rates increase with experience, with the largest improvement occurring from first-time
+        teachers to moderately experienced teachers.
+    </li>
+    <li>
+        More experienced teachers consistently achieve approval rates above the platform average.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+Teacher experience improves approval likelihood, but it does not fully offset the disadvantages associated
+with high project cost. The next section examines how cost and experience interact.
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+<h2>Cost and Experience: An Interaction Effect</h2>
+
+<img
+    src="../visuals/approval_rate_experience_level_vs_price_heatmap.png"
+    width="100%"
+>
+
+<p class="caption">
+The previous sections showed that project cost is negatively associated with approval and that teacher
+experience is positively associated. This heatmap examines how both factors operate jointly.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        The horizontal axis shows teacher experience (from new to highly experienced teachers).
+    </li>
+    <li>
+        The vertical axis shows increasing project cost ranges.
+    </li>
+    <li>
+        Approval rates are high for low-cost projects across nearly all experience levels.
+    </li>
+    <li>
+        Approval rates drop sharply for high-cost projects, even for highly experienced teachers.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+Teacher experience improves approval likelihood primarily for low- and mid-cost projects.
+At high cost levels, project price becomes the dominant constraint.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>Project Scale: Quantity and Price Combined</h2>
+
+<iframe
+    src="../visuals/quantity_vs_price_bubble.html?v=1"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe>
+
+<p class="caption">
+The correlation overview indicated a weak negative association between requested quantity and approval.
+This visualization examines how quantity behaves when combined with project cost.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        The x-axis shows requested quantity and the y-axis shows total project cost.
+    </li>
+    <li>
+        Each bubble represents a group of projects; bubble size reflects how many projects fall in that group.
+    </li>
+    <li>
+        Approval rates are highest for low-quantity, low-cost projects and lowest for projects that are both
+        high in quantity and high in cost.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+Project scale becomes most restrictive when quantity and cost increase together,
+indicating that overall project burden—rather than price or quantity alone—drives lower approval probabilities.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>Differences Across Subject Categories</h2>
+
+<img
+    src="../visuals/approval_rate_subject_categories.png"
+    width="100%"
+>
+
+<p class="caption">
+The correlation overview focused on numeric project characteristics.
+This section extends the analysis to subject categories, which may also shape approval outcomes.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        Each bar shows the approval rate for a subject category.
+    </li>
+    <li>
+        Some subjects consistently achieve approval rates above the platform average,
+        while others fall noticeably below it.
+    </li>
+    <li>
+        Core academic and classroom-oriented subjects tend to perform better than
+        several enrichment or specialized subject areas.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+These patterns indicate that approval outcomes are influenced not only by project cost and scale,
+but also by donor preferences and perceived instructional priority across subject areas.
+</p>
+
+</div>
+
+
+<div class="section">
+<h2>Approval Patterns Across Grade Levels</h2>
+
+<iframe
+    src="../visuals/grade_vs_approval_and_trend.html"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe>
+
+<p class="caption">
+After examining cost, experience, scale and subject differences, this section extends the analysis
+to student grade levels.
+</p>
+
+<div class="viz-explanation">
+<ul>
+    <li>
+        Each bar shows the approval rate for a grade category.
+    </li>
+    <li>
+        Projects targeting early and elementary grades achieve the highest approval rates.
+    </li>
+    <li>
+        Approval rates decline for middle school and high school projects.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+These results indicate that projects serving older students face a systematic disadvantage
+that cannot be explained by numeric project characteristics alone.
+</p>
+
+</div>
+
+
+
+<div class="section">
+<h2>How Cost Impacts Approval Across Grade Levels</h2>
+
+<iframe 
+    src="../visuals/project_cost_and_approval_by_grade.html?v=1"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe> 
+
+<p class="caption">
+Approval rates decline as project cost increases for all grade levels.
+However, the strength of this decline varies substantially by student age group,
+with projects for older grades experiencing sharper reductions in approval as costs rise.
+</p>
+
+<div class="viz-explanation">
+<b>How to read this plot (with examples):</b>
+<ul>
+    <li>
+        The <b>x-axis</b> represents increasing project cost ranges,
+        while each <b>line</b> corresponds to a different grade category.
+    </li>
+    <li>
+        At lower cost levels, approval rates are relatively high across all grades,
+        indicating broad support for affordable projects regardless of student age.
+    </li>
+    <li>
+        As project cost increases, approval rates decline for every grade group,
+        but the decline is <b>steepest for middle school and high school projects</b>.
+    </li>
+    <li>
+        For example, a high-cost project for elementary students still maintains a moderate likelihood of approval,
+        whereas a similarly priced project for high school students falls much closer to the bottom of the chart.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+This evidence indicates that projects serving older students are subject to a compounded disadvantage:
+they typically require higher budgets and face stricter approval thresholds as costs grow.
+Cost therefore amplifies existing grade-related differences in funding success.
+</p>
+</div>
+
+
+<!-- <div class="section">
+<h2>What Drives Approval (and What Doesn’t)</h2>
+
+<iframe
+    src="../visuals/correlation_heatmap.html?v=1"
+    width="100%"
+    height="600"
+    frameborder="0">
+</iframe>
+
+<p class="caption">
+No individual numeric feature strongly explains project approval outcomes.
+Most measurable project characteristics exhibit only weak linear relationships with approval.
+</p>
+
+<div class="viz-explanation">
+<b>How to read this heatmap (with examples):</b>
+<ul>
+    <li>
+        Each cell shows the <b>correlation</b> between a numeric project feature
+        (such as cost, quantity, or teacher experience) and approval outcome.
+    </li>
+    <li>
+        Values near <b>+1</b> indicate strong positive relationships,
+        values near <b>-1</b> indicate strong negative relationships,
+        and values near <b>0</b> indicate little or no linear association.
+    </li>
+    <li>
+        Teacher experience displays a <b>small positive correlation</b>,
+        indicating that more experienced teachers are slightly more likely to obtain approval.
+    </li>
+    <li>
+        Project cost and requested quantity show <b>weak negative correlations</b>,
+        suggesting that larger and more expensive projects face modest disadvantages.
+    </li>
+</ul>
+</div>
+
+<p class="caption">
+The predominance of near-zero correlations confirms that approval outcomes are not driven by any single numeric factor.
+Instead, approval decisions emerge from interactions between multiple factors
+— such as cost combined with experience, grade level, and subject category —
+as well as qualitative elements of proposals that are not captured in structured variables.
+</p>
+</div> -->
+
+
+<div class="section">
+<h2>Key Insights</h2>
+
+<ul>
+    <li>
+        Approval outcomes are shaped by interacting project characteristics rather than isolated factors.
+        The correlation overview and interaction analyses show that no single numeric feature explains success.
+    </li>
+    <li>
+        Project cost is the most consistent constraint on approval.
+        Across all trend and interaction analyses, approval rates decline steadily as budgets increase.
+    </li>
+    <li>
+        Teacher experience improves approval likelihood, but only partially offsets funding risk.
+        Experience primarily benefits low- and mid-cost projects.
+    </li>
+    <li>
+        Project scale becomes most restrictive when quantity and cost increase together,
+        producing the lowest approval rates.
+    </li>
+    <li>
+        Systematic differences persist across grade levels and subject categories,
+        indicating structural rather than individual-level disadvantages.
+    </li>
+</ul>
+
+</div>
+
+
+
+<div class="section">
+<h2>Recommendations</h2>
+
+<ul>
+    <li>
+        Provide structured onboarding and proposal guidance for new teachers,
+        as approval rates are consistently lower for low-experience submissions.
+    </li>
+    <li>
+        Introduce cost-aware guidance at submission time, such as suggested budget ranges
+        based on similar successful projects.
+    </li>
+    <li>
+        Create a dedicated review or campaign pathway for high-cost projects,
+        which face low approval probabilities regardless of teacher experience.
+    </li>
+    <li>
+        Increase visibility and targeted campaigns for underperforming subject areas
+        and projects serving older grade levels.
+    </li>
+    <li>
+        Monitor approval performance using interaction-based indicators
+        (for example, high cost × high school × low experience).
+    </li>
+</ul>
+
+</div>
+
+
+<div class="section">
+<h2>Why This Matters</h2>
+
+<p>
+Classroom resources directly affect what teachers can offer their students.
+When certain types of projects repeatedly struggle to receive funding,
+the result is reduced learning opportunities for specific student groups.
+</p>
+
+<p>
+This analysis shows that approval outcomes are driven primarily by structural
+project characteristics such as cost, scale, grade level and subject category,
+rather than individual teacher effort alone.
+</p>
+
+<p>
+Addressing these structural barriers can improve equity in access to classroom
+resources while preserving donor choice and platform sustainability.
+</p>
+
+</div>
+
+
+<!-- <div class="section">
+<h2>Next Experiments</h2>
+
+<ul>
+    <li>
+        <b>Analyze proposal text quality and clarity using existing text fields.</b><br>
+        Using <i>cleaned_essays</i>, <i>cleaned_titles</i>, and <i>cleaned_summary</i>,
+        future work can examine whether linguistic features such as readability,
+        sentiment, and structural clarity are associated with higher approval rates.
+    </li>
+
+    <li>
+        <b>Study approval dynamics across states using available location data.</b><br>
+        Leveraging the existing <i>school_state</i> field,
+        future analysis can explore whether certain states consistently exhibit
+        lower approval rates after controlling for cost, subject, and grade.
+    </li>
+
+    <li>
+        <b>Investigate whether text quality mitigates high-cost disadvantages.</b><br>
+        An interaction analysis between project cost and proposal text features
+        could test whether well-written proposals partially offset the lower approval
+        rates associated with large budgets.
+    </li>
+
+    <li>
+        <b>Build early-warning models for at-risk projects.</b><br>
+        Predictive models using project cost, quantity, subject category, grade level,
+        teacher experience, and proposal text features could flag submissions
+        with low approval probability and provide targeted feedback before publication.
+    </li>
+
+    <li>
+        <b>Evaluate the effectiveness of targeted visibility interventions.</b><br>
+        If subject- or grade-focused campaigns are introduced,
+        future analysis can measure whether approval gaps for underfunded groups
+        decrease relative to historical baselines.
+    </li>
+</ul>
+</div> -->
+
+<div class="section">
+<h2>Executive Summary</h2>
+
+<p>
+This project analyzes DonorsChoose classroom funding requests to identify which project
+characteristics are associated with approval outcomes.
+Although most projects are approved, meaningful and persistent disparities exist.
+</p>
+
+<p>
+A correlation-based overview shows that no single numeric feature strongly explains approval.
+Project cost is the strongest negative signal, while teacher experience is the strongest positive signal.
+However, interaction analyses reveal that experience cannot fully offset the disadvantages
+associated with high project cost or large project scale.
+</p>
+
+<p>
+Projects serving older students and certain subject categories also face systematically
+lower approval rates, indicating structural rather than individual-level barriers.
+</p>
+
+<p>
+The findings suggest that DonorsChoose can improve equity and platform effectiveness by
+providing targeted onboarding support, cost-aware guidance, and dedicated pathways for
+high-cost and under-served projects.
+</p>
+
+</div>

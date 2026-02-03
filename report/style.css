@@ -1,0 +1,202 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px auto;                 /* was 40px */
+    max-width: 1000px;
+    line-height: 1.45;                 /* was 1.8  → tighter lines */
+    background-color: #f9fbfd;
+    color: #2d2d2d;
+    padding: 16px;                     /* was 20px */
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 2.1em;                  /* was 2.4em */
+    margin-bottom: 28px;               /* was 40px */
+    color: #1f3a5f;
+}
+
+h2 {
+    font-size: 1.45em;                 /* was 1.6em */
+    margin-top: 38px;                  /* was 60px */
+    margin-bottom: 14px;               /* was 20px */
+    color: #1f3a5f;
+    border-bottom: 2px solid #dce6f2;
+    padding-bottom: 6px;               /* was 8px */
+}
+
+h3 {
+    font-size: 1.05em;                 /* was 1.2em */
+    margin-top: 18px;                  /* was 30px */
+    color: #2c5282;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;               /* was 70px */
+}
+
+/* Paragraphs */
+p {
+    font-size: 0.95em;                 /* was 1.05em */
+    margin-bottom: 10px;               /* was 16px */
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    display: block;
+    margin: 18px auto 10px auto;       /* was 25px auto 12px auto */
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Captions */
+.caption {
+    background-color: #fff3b0;
+    border-left: 5px solid #f4c430;
+    padding: 10px 14px;                /* was 16px 20px */
+    margin: 10px auto 24px auto;       /* was 15px auto 45px auto */
+    font-size: 0.88em;                 /* was 0.95em */
+    color: #4a3b00;
+    line-height: 1.4;                  /* was 1.6 */
+    border-radius: 4px;
+}
+
+.caption::before {
+    content: "Key Insight";
+    display: block;
+    font-weight: 700;
+    font-size: 0.7em;                  /* was 0.75em */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8a6d00;
+    margin-bottom: 4px;                /* was 6px */
+}
+
+/* Highlight box */
+.highlight {
+    background-color: #eef4ff;
+    padding: 12px;                     /* was 18px */
+    border-left: 5px solid #1f3a5f;
+    border-radius: 4px;
+    margin: 16px 0;                    /* was 25px */
+    font-size: 0.92em;                 /* was 1em */
+}
+
+/* Lists */
+ul {
+    margin-left: 16px;                 /* was 20px */
+    margin-bottom: 8px;
+}
+
+li {
+    margin-bottom: 6px;                /* was 12px */
+    font-size: 0.94em;                 /* was 1.02em */
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;                  /* was 80px */
+    padding-top: 14px;                 /* was 20px */
+    border-top: 1px solid #dce6f2;
+    text-align: center;
+    font-size: 0.85em;                 /* was 0.9em */
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        margin: 16px;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+/* Reduce space between consecutive paragraphs */
+p + p {
+    margin-top: 4px;
+}
+
+/* Reduce space between consecutive captions */
+.caption + .caption {
+    margin-top: 6px;
+}
+
+/* Reduce space between consecutive lists (viz-explanation blocks) */
+.viz-explanation + .viz-explanation {
+    margin-top: 6px;
+}
+
+/* Reduce space between list and paragraph immediately after it */
+ul + p {
+    margin-top: 6px;
+}
+/* Make plots a bit smaller without changing layout */
+
+/* Side-by-side layout for plot + text */
+
+.side-by-side{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+.plot-col{
+    flex: 0 0 55%;   /* plot takes 55% width */
+}
+
+.text-col{
+    flex: 0 0 45%;   /* text takes 45% width */
+}
+
+/* keep image responsive inside smaller column */
+.plot-col img{
+    width: 100%;
+    height: auto;
+}
+
+/* stack on small screens */
+@media (max-width: 900px){
+    .side-by-side{
+        flex-direction: column;
+    }
+
+    .plot-col,
+    .text-col{
+        flex: 1 1 100%;
+    }
+}
+/* Only for the Overall Approval Landscape plot */
+.approval-plot{
+    max-height: 520px;   /* increase only this one */
+    width: 100%;
+    height: auto;
+}
+
+/* Make plot and text columns equal height ONLY for approval section */
+
+.approval-row{
+    align-items: stretch;
+      /* important */
+}
+
+/* force both columns to stretch to same height */
+.approval-row .plot-col,
+.approval-row .text-col{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* make the image fill the available height nicely */
+.approval-row .plot-col img{
+    height: 100%;
+    object-fit: contain;
+    background-color: white ; 
+}
