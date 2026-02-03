@@ -53,13 +53,6 @@ You can view the full interactive report here:
 
 ---
 
-## 🧪 Tools & Technologies
-- Python (Pandas, Matplotlib, Seaborn)
-- Jupyter Notebook
-- HTML & CSS
-- GitHub & GitHub Pages
-
----
 
 ## 📌 Data Source
 Dataset from Kaggle (DonorsChoose):  
