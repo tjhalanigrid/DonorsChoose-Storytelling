@@ -1,52 +1,52 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 30px auto;                 /* was 40px */
+    margin: 30px auto;                 
     max-width: 1000px;
-    line-height: 1.45;                 /* was 1.8  → tighter lines */
+    line-height: 1.45;                 
     background-color: #f9fbfd;
     color: #2d2d2d;
-    padding: 16px;                     /* was 20px */
+    padding: 16px;                 
 }
 
 /* Headings */
 h1 {
     text-align: center;
-    font-size: 2.1em;                  /* was 2.4em */
-    margin-bottom: 28px;               /* was 40px */
+    font-size: 2.1em;                 
+    margin-bottom: 28px;               
     color: #1f3a5f;
 }
 
 h2 {
-    font-size: 1.45em;                 /* was 1.6em */
-    margin-top: 38px;                  /* was 60px */
-    margin-bottom: 14px;               /* was 20px */
+    font-size: 1.45em;                
+    margin-top: 38px;                 
+    margin-bottom: 14px;              
     color: #1f3a5f;
     border-bottom: 2px solid #dce6f2;
-    padding-bottom: 6px;               /* was 8px */
+    padding-bottom: 6px;               
 }
 
 h3 {
-    font-size: 1.05em;                 /* was 1.2em */
-    margin-top: 18px;                  /* was 30px */
+    font-size: 1.05em;                 
+    margin-top: 18px;                  
     color: #2c5282;
 }
 
 /* Sections */
 .section {
-    margin-bottom: 40px;               /* was 70px */
+    margin-bottom: 40px;               
 }
 
 /* Paragraphs */
 p {
-    font-size: 0.95em;                 /* was 1.05em */
-    margin-bottom: 10px;               /* was 16px */
+    font-size: 0.95em;                
+    margin-bottom: 10px;               
 }
 
 /* Images */
 img {
     max-width: 100%;
     display: block;
-    margin: 18px auto 10px auto;       /* was 25px auto 12px auto */
+    margin: 18px auto 10px auto;       
     border-radius: 6px;
     border: 1px solid #d0d7de;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -56,11 +56,11 @@ img {
 .caption {
     background-color: #fff3b0;
     border-left: 5px solid #f4c430;
-    padding: 10px 14px;                /* was 16px 20px */
-    margin: 10px auto 24px auto;       /* was 15px auto 45px auto */
-    font-size: 0.88em;                 /* was 0.95em */
+    padding: 10px 14px;                
+    margin: 10px auto 24px auto;       
+    font-size: 0.88em;               
     color: #4a3b00;
-    line-height: 1.4;                  /* was 1.6 */
+    line-height: 1.4;                  
     border-radius: 4px;
 }
 
@@ -174,7 +174,7 @@ ul + p {
 }
 /* Only for the Overall Approval Landscape plot */
 .approval-plot{
-    max-height: 520px;   /* increase only this one */
+    max-height: 520px;  
     width: 100%;
     height: auto;
 }
@@ -183,7 +183,7 @@ ul + p {
 
 .approval-row{
     align-items: stretch;
-      /* important */
+    
 }
 
 /* force both columns to stretch to same height */
@@ -200,3 +200,5 @@ ul + p {
     object-fit: contain;
     background-color: white ; 
 }
+
+

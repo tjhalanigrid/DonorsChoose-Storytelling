@@ -1,5 +1,20 @@
 # Funding the Gap – DonorsChoose Data Storytelling Project
 
+---
+
+## 🌐 Final Report
+
+If you would like to explore the interactive storytelling report, please visit:  
+➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/report/main.html
+
+If you would like to view the report in PDF format, please refer to:  
+➡️ report/Funding_the_Gap_DonorsChoose_Report.pdf
+
+You can view the Next Experiments page here:  
+➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/report/NextExperiments.html
+
+---
+
 ## 📌 Project Overview
 This project analyzes DonorsChoose classroom funding data using visual storytelling techniques.  
 The goal is to understand which types of projects are more or less likely to be approved and which
@@ -40,8 +55,9 @@ and actionable insights.
   → Dataset files (not included in the repository due to large size; see data source below).
 
 - report/  
-  → main.html: main storytelling report.  
-  → NextExperiments.html: extended future work section.
+  → main.html: main interactive storytelling report.  
+  → NextExperiments.html: extended future work section.  
+  → Funding_the_Gap_DonorsChoose_Report.pdf: static PDF version of the final report.
 
 - style.css  
   → Custom styling for the storytelling report.
@@ -53,23 +69,12 @@ and actionable insights.
 
 ## 🔁 How to Reproduce the Analysis
 
-1. Download the DonorsChoose dataset from the link provided below.
-2. Place the dataset files inside the `data/` directory.
-3. Open `notebooks/analysis.ipynb` and run all cells in order.
-4. Run `notebooks/main.ipynb` to generate the final visualizations.
-5. The generated Plotly HTML files will be saved to the `visuals/` folder.
-6. Open `report/main.html` in a browser to view the final storytelling report.
-
----
-
-## 🌐 Final Report
-
-You can view the full interactive report here:  
-➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/report/main.html
-
-
-You can view the Next Experiments page here:  
-➡️ https://tjhalanigrid.github.io/DonorsChoose-Storytelling/report/NextExperiments.html
+1. Download the DonorsChoose dataset from the link provided below.  
+2. Place the dataset files inside the `data/` directory.  
+3. Open `notebooks/analysis.ipynb` and run all cells in order.  
+4. Run `notebooks/main.ipynb` to generate the final visualizations.  
+5. The generated Plotly HTML files will be saved to the `visuals/` folder.  
+6. Open `report/main.html` in a browser to view the final interactive storytelling report.
 
 ---
 
